@@ -1,15 +1,19 @@
 
-<%= link_to "Update a task", edit_task_path %>
+<div class="link-to">
+  <%= link_to "Update this task", edit_task_path %>
+</div>
 
 <h2><%= @task.title %></h2>
 <p><%= @task.details %></p>
 <p><% if @task.completed %>
-<%= "Done!"%> <%else%> <%= "Pending" %>
+<%= "Status: Done!"%> <%else%> <%= "Status: Pending" %>
 <% end %> </p>
 
-<%= link_to "Delete #{@task.title}",
-            task_path(@task),
-            method: :delete,
-            data: { confirm: "Sure about it?" } %>
+<div class="link-to">
+  <%= link_to "Delete #{@task.title}",
+              task_path(@task),
+              method: :delete,
+              data: { confirm: "Sure about it?" } %>
+</div>
 
-<li><%= link_to "Back to tasks list", tasks_path %></li>
+<div class="link-to"><%= link_to "Back to tasks list", tasks_path %></div>
